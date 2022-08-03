@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 400;
+  height: 100px;
+  background-color: blanchedalmond;
+  margin: 0;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+}
+.section_left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: antiquewhite;
+  padding: 25px;
+}
+
+.section_right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: bisque;
+  padding: 25px;
+}
+.field_title {
+  margin-bottom: 25px;
+  height: 30px;
+  border: 2px solid black;
+  outline: none !important;
+}
+.field_title:hover,
+.field_title:focus {
+  border: 2px solid blueviolet;
+}
+.field_description {
+  margin-bottom: 25px;
+  border: 2px solid black;
+  outline: none !important;
+}
+.field_description:hover,
+.field_description:focus {
+  border: 2px solid blueviolet;
+}
+.button_add {
+  height: 30px;
+  background-color: chartreuse;
+}
+.list_item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.button_delete {
+  background-color: red;
+}
+.list_item_title {
+  border-bottom: 2px solid black;
+  flex: 1;
+  margin-right: 10px;
+}
+.list_item_title:hover {
+  border-bottom: 2px solid blueviolet;
+}
