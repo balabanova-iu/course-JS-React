@@ -196,16 +196,32 @@
 // }
 // console.log(factorial(4));
 
-function amountOfPages(summary) {
-  let result = "";
-  let n = 0;
-  for (let i = 1; i <= summary; i++) {
-    result += i;
-    if (result.length === summary) {
-      n = i;
-      break;
-    }
-  }
-  return n;
-}
-console.log(amountOfPages(25));
+// function amountOfPages(summary) {
+//   let result = "";
+//   let n = 0;
+//   for (let i = 1; i <= summary; i++) {
+//     result += i;
+//     if (result.length === summary) {
+//       n = i;
+//       break;
+//     }
+//   }
+//   return n;
+// }
+// console.log(amountOfPages(25));
+
+const funds = [
+  { amount: -1400 },
+  { amount: 2400 },
+  { amount: -1000 },
+  { amount: 500 },
+  { amount: 10400 },
+  { amount: -11400 },
+];
+
+const getPositiveIncomeAmount = (data) => {
+  return data.reduce(
+    (sum, curr) => sum + curr.amount.filter((item) => item.amount > 0)
+  );
+};
+console.log(getPositiveIncomeAmount(funds));
