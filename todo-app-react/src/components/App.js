@@ -5,7 +5,9 @@ import styled from "styled-components";
 import AppHeader from "./Header";
 import CreateForm from "./CreateForm";
 import ItemList from "./ItemList";
-import Modal from "./Modal";
+import Modall from "./Modal";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Content = styled.div`
   display: flex;
@@ -98,7 +100,7 @@ class App extends Component {
           </Content>
         </div>
         {this.state.isModelOpen ? (
-          <Modal
+          <Modall
             title={item.title}
             description={item.description}
             onCloseModal={this.closeModal}

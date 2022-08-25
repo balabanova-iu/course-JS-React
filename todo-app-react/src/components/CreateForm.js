@@ -2,42 +2,15 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   background-color: antiquewhite;
   padding: 25px;
-`;
-
-const Input = styled.input`
-  margin-bottom: 25px;
-  height: 30px;
-  border: 2px solid black;
-  outline: none !important;
-  :hover {
-    border: 2px solid blueviolet;
-  }
-  :focus {
-    border: 2px solid blueviolet;
-  }
-`;
-
-const Textarea = styled.textarea`
-  margin-bottom: 25px;
-  border: 2px solid black;
-  outline: none !important;
-  :hover {
-    border: 2px solid blueviolet;
-  }
-  :focus {
-    border: 2px solid blueviolet;
-  }
-`;
-
-const Button = styled.button`
-  height: 30px;
-  background-color: chartreuse;
 `;
 
 class CreateForm extends Component {
@@ -73,7 +46,28 @@ class CreateForm extends Component {
     const { title, description } = this.state;
     return (
       <Wrapper>
-        <Input
+        <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label></Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={this.onTitleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label></Form.Label>
+            <Form.Control
+              as="textarea"
+              placeholder="Description"
+              rows={3}
+              value={description}
+              onChange={this.onDescriptionChange}
+            />
+          </Form.Group>
+        </Form>
+        {/* <Input
           type="text"
           placeholder="Title"
           value={title}
@@ -84,8 +78,8 @@ class CreateForm extends Component {
           placeholder="Description"
           value={description}
           onChange={this.onDescriptionChange}
-        ></Textarea>
-        <Button type="button" onClick={this.onClick}>
+        ></Textarea> */}
+        <Button type="button" onClick={this.onClick} variant="info">
           Add Task
         </Button>
       </Wrapper>

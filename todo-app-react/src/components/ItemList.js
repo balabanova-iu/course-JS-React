@@ -2,6 +2,9 @@ import React from "react";
 
 import styled from "styled-components";
 
+import CloseButton from "react-bootstrap/CloseButton";
+import ListGroup from "react-bootstrap/ListGroup";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,37 +13,34 @@ const Wrapper = styled.div`
   padding: 25px;
 `;
 
-const Item = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-`;
-
-const Title = styled.div`
-  border-bottom: 2px solid black;
+const Listik = styled.div`
   flex: 1;
-  margin-right: 10px;
-  cursor: pointer;
-`;
-
-const Button = styled.button`
-  background-color: red;
 `;
 
 const ItemList = ({ data, onDelete, onOpenModal }) => {
   return (
     <Wrapper>
-      {data.map(({ id, title }) => {
-        return (
-          <Item key={id}>
-            <Title onClick={() => onOpenModal(id)}>
-              <span>{id}</span>
-              <span>{title}</span>
-            </Title>
-            <Button onClick={() => onDelete(id)}>X</Button>
-          </Item>
-        );
-      })}
+      <ListGroup as="ol" numbered>
+        {data.map(({ id, title }) => {
+          return (
+            <ListGroup.Item
+              className="d-flex justify-content-between align-items-start"
+              as="li"
+              key={id}
+              onClick={() => onOpenModal(id)}
+            >
+              <Listik>{title}</Listik>
+              <CloseButton
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onDelete(id);
+                }}
+              />
+            </ListGroup.Item>
+          );
+        })}
+      </ListGroup>
     </Wrapper>
   );
 };
