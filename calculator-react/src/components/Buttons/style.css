@@ -1,0 +1,21 @@
+.item {
+  height: 50px;
+  flex: 1 1 50px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  background-color: gainsboro;
+  font-size: 20pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: blueviolet;
+}
+.gray {
+  background-color: darkgray;
+}
+.blue {
+  background-color: blue;
+}

@@ -1,0 +1,7 @@
+.resultss {
+  box-sizing: border-box;
+  margin-top: 5px;
+  width: 495px;
+  height: 150px;
+  border: 2px solid rgb(179, 115, 115);
+}
