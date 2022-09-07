@@ -1,0 +1,22 @@
+.first_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+  border: 2px solid black;
+  gap: 200px;
+  background-color: blanchedalmond;
+}
+.first_content_titel {
+  font-size: 40px;
+  margin-top: 50px;
+}
+.first_content_button {
+  height: 50px;
+  width: 550px;
+  box-sizing: border-box;
+  font-size: 20px;
+  cursor: pointer;
+}
